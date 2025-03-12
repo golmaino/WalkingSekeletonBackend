@@ -1,0 +1,30 @@
+---
+policies:
+  - type: commit
+    spec:
+      header:
+        length: 200
+        imperative: true
+        case: lower
+        invalidLastCharacters: .
+      body:
+        required: false
+      dco: false
+      gpg: false
+      spellcheck:
+        locale: US
+      maximumOfOneCommit: false
+      conventional:
+        types:
+          - feat
+          - refactor
+          - chore
+          - docs
+        scopes:
+          - api
+          - service
+          - db
+          - docs
+          - deps
+          - ci
+        descriptionLength: 100
