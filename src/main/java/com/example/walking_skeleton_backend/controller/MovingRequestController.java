@@ -2,6 +2,7 @@ package com.example.walking_skeleton_backend.controller;
 
 import com.example.walking_skeleton_backend.model.MovingRequest;
 import com.example.walking_skeleton_backend.service.MovingRequestService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,11 +13,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/moving-requests")
 public class MovingRequestController {
-    private final MovingRequestService service;
 
-    public MovingRequestController(MovingRequestService service) {
-        this.service = service;
-    }
+    @Autowired
+    private MovingRequestService service;
 
     @PostMapping
     public ResponseEntity<MovingRequest> createMoveRequest(@RequestBody MovingRequest request) {
